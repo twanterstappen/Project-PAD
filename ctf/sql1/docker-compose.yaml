@@ -1,0 +1,27 @@
+# Version of docker
+version: '3.9'
+
+services:
+  # Flask app
+  sql1:
+    build: ./  # Build the service using the Dockerfile in the current directory
+    restart: always  # Restart the container automatically if it stops
+    links:
+      - dbsql1  # Link the sql1 service to the dbsql1 service
+    depends_on:
+      - dbsql1  # sql1 service depends on dbsql1 service
+    ports:
+      - 5001:5000  # Map host port 5001 to container port 5000
+
+  # Database for challenge
+  dbsql1:
+    build: ./mariadb/  # Build the service using the Dockerfile in the mariadb/ directory
+    restart: always  # Restart the container automatically if it stops
+    environment:
+      MYSQL_DATABASE: 'sql1'  # Name of the MySQL database
+      MYSQL_USER: 'sql1'  # MySQL username
+      MYSQL_PASSWORD: 'Hello@CTF546!'  # MySQL user password
+      MYSQL_ROOT_PASSWORD: 'Admin@sql1!9302'  # MySQL root password
+      MYSQL_TCP_PORT: 3308  # MySQL TCP port
+    ports: 
+      - '3308:3308'  # Map host port 3308 to container port 3308

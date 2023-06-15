@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}WordPress{% endblock %}
+{% block content %}
+<style>
+.sql2 {
+    
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    width: 60%;
+}
+
+a.buttons {
+    font-weight: bold;
+    border: 1px solid #797979;
+    padding: 7px;
+    color: #000000 !important;
+    text-decoration: none;
+    background-color: #ddd;
+    white-space: nowrap;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+
+    text-align: center;
+}
+.logout {
+    width: 80px;
+    height: 33px;
+    margin: 40px 0 0 40px;
+  }
+
+.parent {
+    margin: 0;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
+  .child {
+    padding: 1rem 1rem;
+    margin: 0;
+    vertical-align: middle;
+  }
+  .baby {
+    padding: 0.5em;
+    border: 2px dashed #878686;
+    margin: 1px;
+    
+  }
+</style>
+    <br>
+    <br>
+    <a href="/ctf/wordpress" class="logout buttons" style="color:black;">Click here to logout</a>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="sql2">
+    {% if g.flag %}
+        {{ g.flag }}
+    {% elif g.len < 2 %}
+        {% for entry in g.entry %}
+            Welcome {{ entry[0] }}, this is your password: {{ entry[1] }}      
+        {% endfor %}
+    {% else %}
+        {% for entry in g.entry %}
+           {{ entry }}      
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+</div>

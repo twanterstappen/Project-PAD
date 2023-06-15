@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Garbage4you{% endblock %}
+{% block style %}
+
+
+.parent {
+    margin: 0;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
+  .child {
+    padding: 1rem 1rem;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+  }
+  .baby {
+    padding: 0.5em;
+    border: 2px dashed #878686;
+    margin: 1px;
+  }
+{% endblock %}
+{% block content %}
+    <a href="/ctf/garbage4you" style="color:white; float: left;">Click here to logout</a>
+    <br><br>
+    <div class="parent">
+
+        <div class="child" style="font-size: 20px; text-align:center;">
+            Next garbage collection date: <p style="display: inline; color:#c98506; text-shadow: black 2px 0px;">{{ g.date }}</p> <br>
+            For ZIP: <p style="display: inline; color:#46c541; text-shadow: black 2px 0px;">{{ g.zip }}</p>,
+            in city: <p style="display: inline; color:#06f060; text-shadow: black 2px 0px;">{{ g.city }}</p>
+            <br><br><br>
+           
+        </div>
+
+
+        
+    </div>
+{% endblock %}

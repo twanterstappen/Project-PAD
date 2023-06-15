@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+
+{% block page_title %}Register{% endblock %}
+
+{% block content %}
+    <h2 style="color: #86c232;">Register</h2>
+
+    <div class="f-register">
+        {% if message %}
+            <p style="color:red">{{ message }}</p>
+        {% endif %}
+        <p class="f-r"><i>Required fields are marked with an asterisk (*)</i></p>
+        <form class="" method="post" onsubmit="return validatePassword()">
+            <div class="">
+                <label class="i-label" for="firstname">Firstname<p style="color:red; display:inline;">*</p></label>
+                <input class="i-input" name="firstname" type="text" id="firstname" required/>
+            </div>
+            <div class="">
+                <label class="i-label" for="prefix">Prefix</label>
+                <input class="i-input" name="prefix" type="prefix" id="prefix"/>
+            </div>
+            <div class="">
+                <label class="i-label" for="lastname">Lastname<p style="color:red; display:inline;">*</p></label>
+                <input class="i-input" name="lastname" type="lastname" id="lastname" required/>
+            </div>
+            <div class="">
+                <label class="i-label" for="nickname">Nickname<p style="color:red; display:inline;">*</p></label>
+                <input class="i-input" name="nickname" type="nickname" id="nickname" required/>
+            </div>
+            <div class="">
+                <label class="i-label" for="email">Email<p style="color:red; display:inline;">*</p></label>
+                <input class="i-input" name="email" type="email" id="email" required/>
+            </div>
+            <div class="">
+                <label class="i-label" for="password">Password<p style="color:red; display:inline;">*</p></label>
+                <input class="i-input" name="password" type="password" id="password" required/>
+                <div class="password-strength">
+                    <div id="strength-bar"></div>
+                    
+                </div>
+                
+            </div>
+            <div class="strength-text"><span id="strength-text"></span></div>
+            
+            <label class="rgstr-btn">
+                <input type="submit" value="Register">
+            </label>
+        </form>
+    </div>
+
+    <script>document.getElementById("password").addEventListener("input", updatePasswordStrength);</script>
+    
+    
+    <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+{% endblock %}

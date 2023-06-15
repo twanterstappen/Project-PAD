@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+
+  crypto3:
+    # build docer image 
+    build: ./
+    # Configures the service to always restart if it stops for any reason
+    restart: always
+    ports: # Maps port 5006 of the host machine to port 5000 of the container
+      - 5006:5000

@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+
+  web:
+    build: ./central-website/
+    restart: always
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+
+
+  db:
+    build: ./central-website/mariadb/
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'user'
+      MYSQL_USER: 'central-web-user'
+      MYSQL_PASSWORD: 'LitterBoxTV&40295!'
+      MYSQL_ROOT_PASSWORD: 'CentralPlayerGarbageBin@1964!'
+      MYSQL_TCP_PORT: 3307
+    ports: 
+    - '3307:3307'

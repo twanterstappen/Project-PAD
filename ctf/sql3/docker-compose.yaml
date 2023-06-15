@@ -1,0 +1,24 @@
+version: '3.9'  # Specifies the version of Docker Compose syntax being used
+
+services:
+  sql3:
+    build: ./  # Build the service using the Dockerfile in the current directory
+    restart: always  # Restart the container automatically if it stops
+    links:
+      - dbsql3  # Link the sql3 service to the dbsql3 service
+    depends_on:
+      - dbsql3  # sql3 service depends on dbsql3 service
+    ports:
+      - 5003:5000  # Map host port 5003 to container port 5000
+
+  dbsql3:
+    build: ./mariadb/  # Build the service using the Dockerfile in the mariadb/ directory
+    restart: always  # Restart the container automatically if it stops
+    environment:
+      MYSQL_DATABASE: 'sql3'  # Name of the MySQL database
+      MYSQL_USER: 'sql3'  # MySQL username
+      MYSQL_PASSWORD: 'Hello@CTF546!'  # MySQL user password
+      MYSQL_ROOT_PASSWORD: 'Admin@sql3!9302'  # MySQL root password
+      MYSQL_TCP_PORT: 3310  # MySQL TCP port
+    ports: 
+      - '3310:3310'  # Map host port 3310 to container port 3310

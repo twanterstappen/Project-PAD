@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+
+  url2:
+    build: ./
+    restart: always
+    ports:
+      - 5011:5000

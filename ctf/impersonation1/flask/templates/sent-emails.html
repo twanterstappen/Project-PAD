@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}email-viewer{% endblock %}
+{% block content %}
+<html>
+<head>
+  <title>
+    Sent Emails
+  </title>
+  <style>
+
+    
+  </style>
+  <script>
+    function toggleEmail(emailId) {
+      var emailContent = document.getElementById(emailId);
+      emailContent.style.display = (emailContent.style.display === 'block') ? 'none' : 'block';
+    }
+
+  </script>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="/ctf/impersonation1/email-viewer">Back to Email Viewer</a>
+  </div>
+  <h1>Sent Emails</h1>
+  
+  <div class="email-tab" onclick="toggleEmail('email1')">Email 1</div>
+  <div id="email1" class="email-content">
+    <h2>Philip@mail.com</h2>
+    <p>Thank you for the movie recomendation! I really enjoyed star wars, im gonna watch all the movies now! 1.</p>
+  </div>
+
+  <div class="email-tab" onclick="toggleEmail('email2')">Flower_rental@mail.com</div>
+  <div id="email1" class="email-content">
+    <h2>flower_rental</h2>
+    <p>Hi  is it possible to deliver the flowers by 17 june, My order is #239486. My twin sisters's birthday is the 18th of june,
+      it would be very apreciated.
+    </p>
+  </div>
+
+  <div class="email-tab" onclick="toggleEmail('email3')">Kathy.k@mail.com</div>
+  <div id="email1" class="email-content">
+    <h2>Movie</h2>
+    <p>Movietickets.pdf</p>
+  </div>
+
+  
+</body>
+</html>
+{% endblock %}

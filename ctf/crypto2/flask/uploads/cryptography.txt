@@ -1,0 +1,2 @@
+Cryptography is the practice of securing communication from adversaries. It involves techniques such as encryption, decryption, and key management.
+Cryptography ensures that information remains confidential, maintains integrity, and provides authentication in various systems.

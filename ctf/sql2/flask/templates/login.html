@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}Vaccine4you{% endblock %}
+{% block style %}
+.sql2 {
+    width:60%;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.parent {
+    margin: 0;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
+  .child {
+    padding: 1rem 1rem;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+  }
+  .baby {
+    padding: 0.5em;
+    border: 2px dashed #878686;
+    margin: 1px;
+  }
+{% endblock %}
+{% block content %}
+  <div style="margin-bottom: 50px;">
+    <h1 style="color: #7cc2bd; text-shadow: black 2px 0px;">Vaccine4you</h1>
+    <p class="sql2">Login and get your vaccine!</p>
+    <br><br>
+    <form method="post" autocomplete="off">
+        <div style="margin-right: 60px;" class="">
+            <label style="padding: 10px;" class="" for="name">Name</label>
+            <input style="color:black !important; border-radius: 5px; border: none; padding: 15px; color: whitesmoke;" 
+            class="" name="name" type="text" id="name">
+        </div>
+        <div style="margin-top: 3px; margin-right: 60px;" class="">
+            <label style="padding: 10px;" class="" for="password">Password</label>
+            <input style="color:black !important; margin-right: 27px; border-radius: 5px; border: none; padding: 15px;
+            color: whitesmoke;" 
+            class="" name="password" type="password" id="password">
+        </div>
+        <button class="submit" type="submit">Login</button>
+    </form>
+  </div>
+      <a class="button" href="#info">info</a>
+      <div id="info" class="overlay">
+        <div class="popup">
+          <h2>Info</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content-p">
+            <br>
+              Here are some credentials:
+              <br><br>
+              Name: <u>Martina Denny</u>
+              <br>
+              Password: <u>1234</u>
+
+            
+          </div>
+        </div>
+      </div>
+    <div class="hint-box">
+        <a class="button" href="#popup1">Hint 1</a>
+        <div id="popup1" class="overlay">
+          <div class="popup">
+            <h2>Hint 1</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content-p">
+              <br>
+              Try triggering an error with the login inputs
+            </div>
+          </div>
+        </div>
+
+        <a class="button" href="#popup2">Hint 2</a>
+        <div id="popup2" class="overlay">
+          <div class="popup">
+            <h2>Hint 2</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content-p">
+              <br>
+              Select the correct colums
+            </div>
+          </div>
+        </div>
+
+        <a class="button" href="#popup3">Hint 3</a>
+        <div id="popup3" class="overlay">
+          <div class="popup">
+            <h2>Hint 3</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content-p">
+              <br>
+              The admin was not so secure with his password
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

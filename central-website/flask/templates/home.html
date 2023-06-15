@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="text-container">
+  <h1>CyberCTF</h1>
+  <p class="first-line">Unleash Your Inner Hacker:</p>
+  <p class="second-line">Conquer the CyberCTF Challenges</p>
+</div>
+
+
+{% if g.m_lvl %}
+<div class="m-lvl">
+  <i>The most played CTF:</i>
+  <br>
+  &#128293;{{ g.m_lvl[0] }}&nbsp;&nbsp;&nbsp;&nbsp;
+  <br><br>
+  <i>Challange Type:</i>
+  <br>
+  {{ g.m_lvl[1] }}&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+{% endif %}
+<section class="info" id="info">
+  <h1>Info</h1>
+  <p>
+    Are you ready to put your hacking skills to the test? Look no further! CyberCTF is the premier online platform
+    designed exclusively for cybersecurity enthusiasts like you. Whether you're a beginner or an experienced
+    professional, CyberCTF offers an immersive and challenging experience for all levels of expertise.
+    <br><br>
+  <h3>What is CyberCTF?</h3>
+  CyberCTF is a cutting-edge website created as part of a school project in the field of Cyber Security. Our aim is to
+  provide a safe and educational environment where users can enhance their cybersecurity knowledge and skills through
+  Capture the Flag (CTF) challenges. Each CTF is carefully designed to simulate real-world scenarios, focusing
+  primarily on the Open Web Application Security Project (OWASP) Top 10 vulnerabilities.
+  <br><br>
+  <h3>How Does CyberCTF Work?</h3>
+  Signing up on CyberCTF is simple and free! Once you've created your account, you'll gain access to a wide range of CTF
+  challenges spanning various categories. Each challenge is meticulously crafted to test your understanding of security
+  concepts and techniques, encouraging you to think like a hacker and find vulnerabilities in vulnerable applications.
+  </p>
+</section>
+{% endblock %}

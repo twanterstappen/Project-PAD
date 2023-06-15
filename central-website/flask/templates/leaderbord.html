@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}Leaderbord{% endblock %}
+{% block content %}
+
+    <style>
+        .leaderbord {
+        
+            margin: auto;
+            width: 10px;
+        }
+        .parent {
+            margin: 0;
+            margin-top: 0px;
+            padding: 32px 32px;
+            text-align: center;
+        }
+        .child {
+            
+            display: inline-block;
+            margin: 0;
+            vertical-align: middle;
+          }
+        .baby {
+            background-color:red;
+            width:  350px;
+            padding: 10px;
+            margin: 0px;
+            margin-left: 0px;
+            
+        }
+        @media (max-width: 900px) {
+            .baby {
+                width: 200px;
+            }
+        }
+        .baby-zero {
+            text-align: left;
+            border-radius: 15px 0 0 15px;
+            padding-left: 20px;
+            width: 100px;
+            margin-right: 0px;
+        }
+        .baby-one {
+            text-align: left;
+            margin-left: -10px;
+            padding-left: 20px;
+        }
+        .baby-two {
+            margin-left: -10px;
+            text-align: right;
+            border-radius: 0 15px 15px 0;
+            padding-right: 20px;
+
+        }
+    </style>
+    <h1 style="color: #86c232;">Leaderbord Top-10</h1><br><br>
+
+
+    <div class="parent">
+        <div class="child" style="text-align: left;">
+            <b style="color:white; margin-left: 15px;">Rank:</b>
+            <br>
+            {% for entry in g.entry_1 %}
+                {% if loop.index % 2 == 0 %}
+                    <div class="baby baby-zero" style="background-color: #94c055;">
+                {% else %}
+                    <div class="baby baby-zero" style="background-color: #729640;">
+                {% endif %}
+                {{ entry[2] }}
+                </div>                
+            {% endfor %}
+            <br><br><br>
+            <b style="color:white; margin-left: -20px;">Your stats:</b> <br><br>
+            <b style="color:white; margin-left: 15px;">Rank:</b>
+            <div class="baby baby-zero" style="background-color: #3cb405;">{{ g.user_points[2] }}</div>
+        </div>
+        <div class="child" style="text-align: left;">
+            <b style="color:white; margin-left: 5px;">Nickname:</b>
+            <br>
+            {% for entry in g.entry_1 %}
+                {% if loop.index % 2 == 0 %}
+                    <div class="baby baby-one" style="background-color: #94c055;">
+                {% else %}
+                    <div class="baby baby-one" style="background-color: #729640;">
+                {% endif %}
+                {{ entry[0] }}
+                </div>                
+            {% endfor %}
+            <br><br><br>
+            &nbsp;<br><br>
+            <b style="color:white; margin-left: 5px;">Nickname:</b>
+            <div class="baby baby-one" style="background-color: #3cb405;">{{ g.user_points[0] }}</div>
+        </div>
+        
+
+        
+        <div class="child" style="text-align: right;">
+            <b style="color:white; margin-right: 25px;">Score:</b>
+            <br>
+            {% for entry in g.entry_1 %}
+                {% if loop.index % 2 == 0 %}
+                    <div class="baby baby-two" style="background-color: #94c055;">
+                {% else %}
+                    <div class="baby baby-two" style="background-color: #729640;">
+                {% endif %}
+                    {{ entry[1] }}
+                </div>
+            {% endfor %}
+            <br><br><br>
+            &nbsp;<br><br>
+            <b style="color:white; margin-right: 25px;">Score:</b>
+            <div class="baby baby-two" style="background-color: #3cb405;">{{ g.user_points[1] }}</div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+

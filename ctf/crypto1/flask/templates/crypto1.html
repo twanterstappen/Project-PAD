@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Roman Empire Challenge{% endblock %}
+{% block style %}
+    @media (max-width: 580px) {
+        form div {
+            margin-right: 0px !important;
+        }
+    }
+{% endblock %} 
+{% block content %}
+    <div>
+        <h1>Roman Empire Challenge</h1>
+        <p>Decrypt the following message:<br><b style="color:green;">{{ encrypted_message }}</b></p>
+        <br>
+
+        <form method="post" autocomplete="off">
+        <div>
+            <label style="padding: 10px;" for="decrypted_message">Decrypted message:</label>
+            <input style="background-color: var(--fourth-color); border-radius: 5px; border: none; padding: 3px; color: whitesmoke;" name="decrypted_message" type="text" id="decrypted_message" required>
+        </div>
+            <button class="submit" type="submit">Submit</button>
+        </form>
+        <div class="hint-box">
+            <a class="button" href="#popup1">Hint 1</a>
+            <div id="popup1" class="overlay">
+              <div class="popup">
+                <h2>Hint 1</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content-p">
+                  <br>
+                  Caesar was a great emperor
+                </div>
+              </div>
+            </div>
+
+            <a class="button" href="#popup2">Hint 2</a>
+            <div id="popup2" class="overlay">
+              <div class="popup">
+                <h2>Hint 2</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content-p">
+                  <br>
+                  There is an online decoder
+                </div>
+              </div>
+            </div>
+
+            <a class="button" href="#popup3">Hint 3</a>
+            <div id="popup3" class="overlay">
+              <div class="popup">
+                <h2>Hint 3</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content-p">
+                  <br>
+                  <a target="_blank" href="https://cryptii.com/pipes/caesar-cipher">Try me!
+                </div>
+              </div>
+            </div>
+        </div>
+        <h2>{{  g.answer }}</h2>
+    </div>
+{% endblock %}

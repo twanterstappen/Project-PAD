@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Learn{% endblock %}
+
+{% block page_title %}Learn{% endblock %}
+
+
+{% block content %}
+<div class="learn">
+
+    <h2 style="color: #86c232;">
+        What is Sql injection?
+    </h2>
+    <p>
+        SQL injection is a type of attack that targets databases used by web applications. 
+        It involves exploiting vulnerabilities in the web application's code to execute SQL queries that were not intended by the application's developers.
+        To understand SQL injection, it's important to know that web applications often use databases to store information.
+         For example, a login form on a website might ask for a username and password, and then check those values against a database to see if the login information is correct.
+        When a user enters information into a web form, that information is typically sent to a server, which then generates an SQL query to interact with the database.
+         SQL injection attacks exploit vulnerabilities in the web application's code to modify these SQL queries in unexpected ways.
+    </p>
+    <br>
+    <br>
+    <h2 style="color: #86c232;">
+        What is Cryptography?
+    </h2>
+    <p>
+        Cryptography is the practice of securing information so that it can only be accessed by authorized parties.
+        It involves using mathematical algorithms to convert information into a code that can only be deciphered by someone who has the key to unlock it.
+        To understand cryptography, it's helpful to think about a simple example. 
+        Suppose you want to send a message to a friend, but you don't want anyone else to be able to read it. 
+        You could use a simple cipher to encrypt the message, such as shifting each letter in the message by a certain number of positions in the alphabet. 
+        For example, if you shift each letter by three positions, the message "hello" would become "khoor".
+        However, this simple cipher would be relatively easy for someone to crack if they knew how it worked. 
+        Cryptographic algorithms used in modern cryptography are much more complex and difficult to crack.
+        There are two main types of cryptography: symmetric-key cryptography and public-key cryptography. 
+        Symmetric-key cryptography involves using the same key to both encrypt and decrypt the information. 
+        For example, you and your friend could agree on a secret key ahead of time and use it to encrypt and decrypt messages.
+        Public-key cryptography, on the other hand, involves using two keys - a public key and a private key - to encrypt and decrypt information. 
+        The public key can be shared with anyone, but the private key is kept secret. Anyone can use the public key to encrypt a message, but only the holder of the private key can decrypt the message.
+        Cryptography plays a critical role in modern computing, especially in the areas of cybersecurity and digital privacy. 
+        It's used to protect sensitive information such as passwords, credit card numbers, and other personal data from being intercepted by hackers or other unauthorized parties.
+    
+        <!-- <p>Click me for more on  <a href="/PicoPDF">Cryptography</a>.</p> -->
+
+    </p>
+
+
+</div>
+
+{% endblock %}

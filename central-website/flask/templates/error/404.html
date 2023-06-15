@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Error{% endblock %}
+
+
+{% block content %}
+    <h1>Error</h1>
+    <h2><b>Page not found</b></h2>
+    Status code: <u>404</u> <br><br>
+    {{ g.error_text}}<b> {{ g.error_path }}</b>
+
+
+{% endblock %}
+
+

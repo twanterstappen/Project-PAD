@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<h1 style="color: #86c232">Account Settings</h1>
+<br>
+<form class="form-profile" method="post" action="{{ url_for('user.profile') }}">
+    <div class="stngs-parent">
+        <div class="stngs-child">
+            <div class="frst">
+                <label class="input-label" for="firstname"> Firstname<p style="color:red; display:inline;">*</p></label>
+                <input class="input-field" id="firstname" type="text" name="firstname" value="{{ user[0] }}" required />
+            </div>
+            {% if user[1] == None %}
+            <div class="prfx">
+                <label class="input-label" for="Prefix"> Prefix</label>
+                <input class="input-field" id="prefix" type="text" name="prefix" value="" />
+            </div>
+            {% else %}
+            <div class="prfx">
+                <label class="input-label" for="Prefix"> Prefix</label>
+                <input class="input-field" id="prefix" type="text" name="prefix" value="{{ user[1] }}" />
+            </div>
+            {% endif %}
+            <div class="lst">
+                <label class="input-label" for="lastname"> Lastname<p style="color:red; display:inline;">*</p></label>
+                <input class="input-field" id="lastname" type="text" name="lastname" value="{{ user[2] }}" required />
+            </div>
+        </div>
+        <div class="stngs-child">
+            <div class="email">
+                <label class="input-label" for="email"> E-mail<p style="color:red; display:inline;">*</p></label>
+                <input class="input-field" id="email" type="email" name="email" value="{{ user[4] }}" required />
+            </div>
+            <div class="nickname">
+                <label class="input-label" for="nickname"> Nickname<p style="color:red; display:inline;">*</p></label>
+                <input class="input-field" id="nickname" type="text" name="nickname" value="{{ user[3] }}" required />
+            </div>
+            <div>
+                <label class="input-label" for="nickname"> &nbsp; </label>
+                <button type="submit" class="profile-btn">Save profile settings</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="profile-fav" id="favourite" style="scroll-margin-top: 7em;">
+    <h1 style="color: #86c232">Favourite</h1>
+
+    <div class="ctf-box">
+        <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+        {% for entry in g.entry_1 %}
+            <span>
+                <p class="sort-challenge">{{ entry[1] }}</p>
+                <p class="points">Points: {{ entry[3] }}</p>
+                <p class="name-ctf" style="margin-top: 70px;">
+                {% if entry[5] != None %}
+                    <a href="/ctf/{{ entry[4] }}" target="_blank" onclick="javascript:event.target.port={{ entry[5] }}">{{ entry[0] }}</a>
+                {% else %}
+                    {{ entry[0] }}
+                {% endif %}
+                </p>
+
+                {% if entry[8] == 1 %}
+                    <main style="margin-bottom: 40px;">
+                        <form method="post">
+                            <button name="unsave" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-left: 10px; cursor: pointer;">
+                                <p style="margin: 0px; -webkit-text-stroke: 1px rgb(120, 0, 0); color: rgb(210, 0, 0); font-size: 30px;">&#10084;</p>
+                            </button>
+                        </form> 
+                    </main>
+                {% elif entry[8] == 0  %}
+                    <main style="margin-bottom: 40px;"> 
+                        <form method="post">
+                            <button name="save" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-left: 10px; cursor: pointer;">
+                                <p style="margin: 0px; -webkit-text-stroke: 1px black; color: transparent; font-size: 30px;">&#10084;</p>
+                            </button>
+                        </form>
+                    </main>
+                {% endif %}
+                
+
+                {% if entry[11] == 2 %}
+                    <form method="post">
+                        <button name="remove" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-top:5px; margin-left: 00px; cursor: pointer;">
+                            <i style="-webkit-text-stroke: 1px black; color: green;" class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></p>
+                        </button>
+                    </form>
+                    <form method="post">
+                        <button name="change_unlike" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-top:5px; margin-left:-30px; cursor: pointer;">
+                            <i style="-webkit-text-stroke: 1px black; color: transparent;" class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></p>
+                        </button>
+                    </form>
+                {% elif entry[11] == 1  %}
+                    <form method="post">
+                        <button name="change_like" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-top:5px; margin-left: 00px; cursor: pointer;">
+                            <i style="-webkit-text-stroke: 1px black; color: transparent;" class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></p>
+                        </button>
+                    </form>
+                    <form method="post">
+                        <button name="remove" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-top:5px; margin-left:-30px; cursor: pointer;">
+                            <i style="-webkit-text-stroke: 1px black; color: red;" class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></p>
+                        </button>
+                    </form>
+                {% else %}
+                    <form method="post">
+                        <button name="like" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-top:5px; margin-left: 00px; cursor: pointer;">
+                            <i style="-webkit-text-stroke: 1px black; color: transparent;" class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></p>
+                        </button>
+                    </form>
+                    <form method="post">
+                        <button name="unlike" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-top:5px; margin-left:-30px; cursor: pointer;">
+                            <i style="-webkit-text-stroke: 1px black; color: transparent;" class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></p>
+                        </button>
+                    </form>
+                {% endif %}            
+                
+
+                {% if g.h_ctf == entry[6] %}
+                    <p class="solves" style="text-align: right; margin-top: 40px;">&#128293;Solves: {{ entry[7] }}</p>
+                {% else %}
+                    <p class="solves" style="text-align: right; margin-top: 40px;">Solves: {{ entry[7] }}</p>
+                {% endif %}
+
+                
+                
+                <p class="rating" style="text-align: left; margin-top: -40px;">Rating: {{ entry[2] }}</p>
+
+                <a href="" style="margin-top: -85px; margin-right:5px" onclick="copyCtfLink({{ entry[5] }}, '/ctf/{{ entry[4] }}'); return false;"><img src="../static/images/share.svg" alt="Share-button" width="50px"></a>
+                
+            </span>
+        {% endfor %}        
+    </div>
+    </div>
+
+    <script>
+        function copyCtfLink(port, path) {
+          // Get the current URL of the page
+          var hostname = window.location.hostname;
+    
+          // Construct the URL of the CTF based on the current hostname, port, and path
+          var ctfUrl = 'http://' + hostname + ':' + port + path;
+
+        
+          // Copy the CTF URL to the clipboard
+          navigator.clipboard.writeText(ctfUrl)
+            .then(() => {
+              alert('CTF link copied to clipboard!');
+            })
+            .catch((error) => {
+              console.error('Failed to copy text: ', error);
+            });
+        }
+    </script>
+{% endblock %}

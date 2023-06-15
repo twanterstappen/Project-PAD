@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../static/styles/style.css" />
+  <title>CyberCTF - {% block title %}{% endblock %}</title>
+  <style>
+
+    body {
+      background-image: rgb(91, 139, 153);
+    }
+    
+    .email-tab {
+      background-color: #ffe0e0;
+      padding: 40px;
+      cursor: pointer;
+      margin-bottom: 0 px;
+      margin-top: 30px;
+    }
+
+    .email-content {
+      display: none;
+      background-color: #ffffff;
+      padding: 10px;
+      margin-bottom: 20px;
+      outline: 10px;
+      outline-color: black;
+    }
+
+    .account-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .sent-emails-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+    }
+
+    .navbar {
+      background-color: lightgreen;
+      height: 30px;
+    }
+    .navbar a {
+      margin-left: 50px;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5px;
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 200px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      z-index: 9999;
+    }
+
+    .account-info-box {
+        padding: 10px;
+        background-color: #ffe0e0;
+        width: 750px;
+    }
+
+    body-description{
+      padding: 20px;
+      background-color: #ffe0e0;
+    }
+
+
+  
+  </style>
+    <div class="content">{% block content %}{% endblock %}</div>
+</body>
+</html>

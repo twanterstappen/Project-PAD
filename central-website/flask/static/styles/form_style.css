@@ -1,0 +1,68 @@
+/* Styles for register form */
+.f-register {
+  max-width: 600px;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.f-register form {
+  width: 250px;
+  margin: auto;
+}
+
+.f-register .f-r{
+  width: 250px;
+  margin: auto;
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+label[for="firstname"], label[for="prefix"], label[for="lastname"], label[for="email"], label[for="password"], label[for="nickname"]{
+  float: left;
+}
+
+form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+form select {
+  background-color: #333;
+  color: #fff;
+  padding: 4px 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+  width: 210px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #555;
+}
+
+.rgstr-btn{
+  margin-top: 70px;
+}

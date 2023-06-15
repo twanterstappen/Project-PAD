@@ -1,0 +1,83 @@
+.text-container {
+  height: calc(100vh - 4.1875em);
+}
+
+.text-container h1 {
+  font-size: 150px;
+  color: rgba(225, 225, 225, 0.1);
+  background-image: url("https://s31.postimg.cc/yaze1agjv/abstract-background-canvas-249798.jpg");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  -webkit-background-clip: text;
+  background-size: cover;
+  animation: animate 15s linear infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: sans-serif;
+  margin: auto;
+  margin-top: -0.5em;
+  padding: 1.2em 0 1.2em 0;
+}
+
+.first-line {
+  text-align: center;
+  margin-top: -7.8em;
+  font-size: 1.7em;
+  color: white;
+}
+
+.second-line {
+  text-align: center;
+  margin-top: -1em;
+  font-size: 1.1em;
+  color: white;
+}
+
+
+@media (max-width: 1000px) {
+  .text-container h1 {
+   
+    
+    font-size: 110px;
+    margin-top: 0em;
+    
+  }
+  .first-line {
+    margin-top: -5.6em;
+    font-size: 1.5em;
+  }
+  
+  .second-line {
+    margin-top: -1.4em;
+    font-size: 0.9em;
+
+  }
+}
+
+@media (max-width: 670px) {
+  .text-container h1 {
+   
+    font-size: 70px;
+    margin-top: 0.9em;
+  }
+  .first-line {
+    margin-top: -5em;
+    font-size: 1em;
+  }
+  
+  .second-line {
+    margin-top: -1.4em;
+    font-size: 0.6em;
+
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: left 0px top 10px;
+  }
+  40% {
+    background-position: left 270px top 10px;
+  }
+}

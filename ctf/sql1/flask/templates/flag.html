@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style.css" />
+    <script src="../static/scripts/script.js"></script>
+    <link rel="shortcut icon" href="./phpmyadmin/favicon.ico" type="image/x-icon">
+    <title>CyberCTF - phpMyAdmin</title>
+    <style>
+
+        body {
+            background-color: white !important;
+            color: black !important;
+        }
+
+        .parent {
+            margin: 0;
+            margin-top: 0px;
+            padding: 32px 32px;
+            text-align: center;
+          }
+          .child {
+            padding: 16px 16px;
+            display: inline-block;
+            margin: 0;
+            vertical-align: middle;
+          }
+          .baby {
+            padding: 8px;
+            border: 2px dashed #878686;
+            margin: 1px;
+          }
+          .logout {
+            width: 80px;
+            height: 33px;
+            margin: 40px 0 0 40px;
+          }
+
+          .logout a{
+            color: black;
+            text-decoration: none;
+          }
+          .logout :hover {
+            cursor: pointer;
+          }
+          a.button {
+            font-weight: bold;
+            text-shadow: 0 1px 0 #fff;
+            border: 1px solid #aaa;
+            padding: 7px;
+            color: #111 !important;
+            text-decoration: none;
+            background-color: #ddd;
+            white-space: nowrap;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            background-image: linear-gradient(#f8f8f8, #d8d8d8);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <a class="logout button" href="/ctf/phpmyadmin">logout</a>
+    <div class="parent">
+        <div class="child">
+            <b style="color:black;">Your name:</b>
+            <br>
+            {% for entry in g.entry %}
+                <div class="baby">
+                    {{ entry[0] }}
+                </div>                
+            {% endfor %}
+        </div>
+
+        
+        <div class="child">
+            <b style="color:black;">Your password:</b>
+            <br>
+            {% for entry in g.entry %}
+                <div class="baby">
+                    {{ entry[1] }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

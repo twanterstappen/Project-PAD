@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Vaccine4you{% endblock %}
+{% block style %}
+.sql2 {
+    width:40%;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.parent {
+    margin: 0;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
+  .child {
+    padding: 1rem 1rem;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+  }
+  .baby {
+    padding: 0.5em;
+    border: 2px dashed #878686;
+    margin: 1px;
+  }
+{% endblock %}
+{% block content %}
+    <a href="/ctf/vaccine4you" style="color:white; float: left;">Click here to logout</a>
+    <br><br>
+    <div class="parent">
+
+        <div class="child" style="font-size: 20px; text-align:center;">
+            Welcome <p style="display: inline; color:#69a7a2; text-shadow: black 2px 0px;">{{ g.entry[0] }}</p>, your vaccine: 
+            <p style="display: inline; color:#69a567; text-shadow: black 2px 0px;">{{ g.entry[1] }}</p>
+            <br><br><br>
+            <p style="font-size: 16px; width: 250px; text-align: center; margin:auto;">You can make an appointment with the servicedesk<br><br>call: <i>+31 88 9638527</i></p>
+        </div>
+
+
+        
+    </div>
+{% endblock %}

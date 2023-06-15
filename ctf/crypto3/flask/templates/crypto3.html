@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Python Code Hunt{% endblock %}
+
+{% block page_title %}
+    <h1>Python Code Hunt</h1>
+    <br>
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="passwordhunt">
+        <h2 style="font-size: 30px;">Description</h2>
+        <div>
+            <div class="" style="margin-bottom: 75px;">
+                <p style="font-size: 20px;">
+                    Recently, a file containing sensitive information was leaked, which includes the private key of the webserver.
+                    Your task is to analyze the webserver and find a way to exploit the vulnerability to retrieve the private key.
+                    Can you run this
+
+                    <a href="../static/scripts/ende.py" download>Python script</a>
+                    using a secret password to get 
+                    <a href="../static/scripts/flag.txt" target="_blank">the flag</a>
+                    ?
+                </p>
+            </div>
+        </div>
+      <div class="hint-box">
+          <a class="button" href="#popup1">Hint 1</a>
+          <div id="popup1" class="overlay">
+            <div class="popup">
+              <h2>Hint 1</h2>
+              <a class="close" href="#">&times;</a>
+              <div class="content-p">
+                <br>
+                Snackes can help a lot
+              </div>
+            </div>
+          </div>
+
+          <a class="button" href="#popup2">Hint 2</a>
+          <div id="popup2" class="overlay">
+            <div class="popup">
+              <h2>Hint 2</h2>
+              <a class="close" href="#">&times;</a>
+              <div class="content-p">
+                <br>
+                &#129302;Bi bop bap, I'm not a crawler
+              </div>
+            </div>
+          </div>
+
+          <a class="button" href="#popup3">Hint 3</a>
+          <div id="popup3" class="overlay">
+            <div class="popup">
+              <h2>Hint 3</h2>
+              <a class="close" href="#">&times;</a>
+              <div class="content-p">
+                <br>
+                CyberChef is good for online cooking
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+ 
+        

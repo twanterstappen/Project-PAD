@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+	<html lang="en-US">
+	
+<!-- Mirrored from twanterstappen.nl/wp-login.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Apr 2023 23:08:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Log In &lsaquo; Wordpress &#8212; WordPress</title>
+	<meta name='robots' content='max-image-preview:large, noindex, noarchive' />
+<link rel='stylesheet' id='dashicons-css' href='wp-includes/css/dashicons.minae48.css?ver=6.2' media='all' />
+
+<link rel='stylesheet' id='buttons-css' href='wp-includes/css/buttons.minae48.css?ver=6.2' media='all' />
+<link rel='stylesheet' id='forms-css' href='wp-admin/css/forms.minae48.css?ver=6.2' media='all' />
+<link rel='stylesheet' id='l10n-css' href='wp-admin/css/l10n.minae48.css?ver=6.2' media='all' />
+<link rel='stylesheet' id='login-css' href='wp-admin/css/login.minae48.css?ver=6.2' media='all' />
+	<meta name='referrer' content='strict-origin-when-cross-origin' />
+		<meta name="viewport" content="width=device-width" />
+		</head>
+	<body class="login no-js login-action-login wp-core-ui  locale-en-us">
+		<style>
+			.flashies{
+				text-align: center;
+				background-color: #f59098;
+				border-radius: 20px;
+				padding: 20px !important;
+			}
+			.flashies {
+				background-repeat: no-repeat;
+				background-position: left top;
+				padding-top:95px;
+				margin-bottom:60px;
+				-webkit-animation-duration: 5s;animation-duration: 5s;
+				-webkit-animation-fill-mode: both;animation-fill-mode: both;
+			 }
+			 
+			 @-webkit-keyframes fadeOut {
+				0% {opacity: 1;}
+				100% {opacity: 0;}
+			 }
+			 
+			 @keyframes fadeOut {
+				0% {opacity: 1;}
+				100% {opacity: 0;}
+			 }
+			 
+			 .flashies {
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			 }
+		</style>
+
+
+
+
+	<script type="text/javascript">
+		document.body.className = document.body.className.replace('no-js','js');
+	</script>
+		<div id="login">
+		<h1><a href="https://wordpress.org/">Powered by WordPress</a></h1>
+	
+		<form name="loginform" id="loginform" method="post" autocomplete="off">
+			<div class="item form-row">
+                <label for="name" class="col-4 d-flex align-items-center">
+                  Name: </label>
+                <div class="col-8">
+                  <input type="text" value="" placeholder="" id="name" name="name" size="24" class="textfield"
+                    autocomplete="off">
+                </div>
+              </div>
+
+              <div class="item form-row">
+                <label for="password" class="col-4 d-flex align-items-center">
+                  Password: </label>
+                <div class="col-8">
+                  <input type="password" value="" placeholder="" id="password" name="password" size="24"
+                    class="textfield" autocomplete="current-password" autocomplete="off">
+                </div>
+              </div>
+						
+				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log In" />
+									
+			</p>
+		</form>
+
+		{% if g.message %}
+			<div class="flashies">			
+				{{ g.message }}
+			</div>
+		{% endif %}
+		
+		<style>
+			.overlay {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(0, 0, 0, 0.403);
+				transition: opacity 200ms;
+				visibility: hidden;
+				opacity: 0;
+			  }
+		  
+			  .overlay:target {
+				visibility: visible;
+				opacity: 1;
+			  }
+			.popup {
+				margin: 70px auto;
+				margin-top: 56px;
+				padding: 20px;
+				background: #fff;
+				border-radius: 5px;
+				width: 30%;
+				padding-bottom: 50px;
+				position: relative;
+				transition: all 5s ease-in-out;
+			  }
+		  
+			  .popup h2 {
+				margin-top: 0;
+				color: #333;
+				font-family: Tahoma, Arial, sans-serif;
+			  }
+		  
+			  .popup .close {
+				position: absolute;
+				top: 20px;
+				right: 30px;
+				transition: all 200ms;
+				font-size: 30px;
+				font-weight: bold;
+				text-decoration: none;
+				color: #333;
+			  }
+		  
+			  .popup .close:hover {
+				color: #0000007f;
+			  }
+		  
+			  .popup .content {
+				max-height: 30%;
+				overflow: auto;
+			  }
+		  
+		  
+			  @media screen and (max-width: 700px) {
+				.box {
+				  width: 70%;
+				}
+		  
+				.popup {
+				  width: 70%;
+				}
+			  }
+		  
+			  .hint-box {
+				margin-top: 120px;
+				margin-left: auto;
+				margin-right: auto;
+
+			  }
+
+			.test {
+				margin-left: 30px !important;
+			}
+		  
+			.hint-box a.button {
+			font-size: 16px;
+			}
+		</style>
+	
+	<a class="button test" href="#popup0" style="position:absolute; font-size: 16px; width: 65px; height: 36px; text-align: center;">Info</a>
+	<div id="popup0" class="overlay">
+		<div class="popup">
+		<h2>Info</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			<br>
+			Your goal is to login with an account that has system-level permissions.
+			<br>
+			You can use the following credential to login:
+			<br>
+			<br>Name: Abbey
+			<br>Password: dirt
+		</div>
+		</div>
+	</div>
+	
+	<div class="hint-box">
+		<a class="button test" href="#popup1">Hint 1</a>
+		<div id="popup1" class="overlay">
+		  <div class="popup">
+			<h2>Hint 1</h2>
+			<a class="close" href="#">&times;</a>
+			<div class="content">
+			  <br>
+			  SQL has an infomation database
+			</div>
+		  </div>
+		</div>
+	
+	
+		<a class="button test" href="#popup2">Hint 2</a>
+		<div id="popup2" class="overlay">
+		  <div class="popup">
+			<h2>Hint 2</h2>
+			<a class="close" href="#">&times;</a>
+			<div class="content">
+			  <br>
+			  What about the existing tables and columns
+			</div>
+		  </div>
+		</div>
+	
+	
+		<a class="button test" href="#popup3">Hint 3</a>
+		<div id="popup3" class="overlay">
+		  <div class="popup">
+			<h2>Hint 3</h2>
+			<a class="close" href="#">&times;</a>
+			<div class="content">
+			  <br>
+			  Abbey is a user, try logging in as one of the admins
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</body>
+	
+</html>
+	

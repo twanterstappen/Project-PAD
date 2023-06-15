@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+
+  crypto2:
+    build: ./
+    # command: sh -c "sleep 10s ; python3 ./app/flask/ctf2.py"
+    restart: always
+    ports:
+      - 5005:5000

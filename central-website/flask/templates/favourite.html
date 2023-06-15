@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Favourite{% endblock %}
+{% block content %}
+    <h1 style="color: #86c232;">Favourite</h1>
+
+    <div class="ctf-box">
+        {% for entry in g.entry_1 %}
+            <span>
+                <p class="sort-challenge">{{ entry[1] }}</p>
+                <p class="points">Points: {{ entry[3] }}</p>
+                <p class="name-ctf" style="margin-top: 70px;">
+                {% if entry[5] != None %}
+                    <a href="/ctf/{{ entry[4] }}" target="_blank" onclick="javascript:event.target.port={{ entry[5] }}">{{ entry[0] }}</a>
+                {% else %}
+                    {{ entry[0] }}
+                {% endif %}
+                </p>
+                <!-- <p class="empty"></p> -->
+                <!--<button class="" style=" border-radius: 5px;" >Add to favorite</button> -->
+                {% if entry[8] == 1 %}
+                    <main style="margin-bottom: 40px;">
+                        <form method="post">
+                            <button name="unlike" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-left: 10px; cursor: pointer;">
+                                <p style="margin: 0px; -webkit-text-stroke: 1px rgb(120, 0, 0); color: rgb(210, 0, 0); font-size: 30px;">&#10084;</p>
+                            </button>
+                        </form> 
+                    </main>
+                {% elif entry[8] == 0  %}
+                    <main style="margin-bottom: 40px;"> 
+                        <form method="post">
+                            <button name="like" value="{{ entry[6] }}" style="background-color: transparent; border: none; padding: 0; width: 30px; height: 30px; margin-left: 10px; cursor: pointer;">
+                                <p style="margin: 0px; -webkit-text-stroke: 1px black; color: transparent; font-size: 30px;">&#10084;</p>
+                            </button>
+                        </form>
+                    </main>
+                {% endif %}
+                
+                
+
+                {% if g.h_ctf == entry[6] %}
+                    <p class="solves" style="text-align: right; margin-top: 40px;">&#128293;Solves: {{ entry[7] }}</p>
+                {% else %}
+                    <p class="solves" style="text-align: right; margin-top: 40px;">Solves: {{ entry[7] }}</p>
+                {% endif %}
+
+                
+                
+                <p class="rating" style="text-align: left; margin-top: -40px;">Rating: {{ entry[2] }}/10</p>
+
+                <a href="" style="margin-top: -85px; margin-right:5px" onclick="copyCtfLink({{ entry[5] }}, '/{{ entry[4] }}'); return false;"><img src="../static/images/share.svg" alt="Share-button" width="50px"></a>
+                
+            </span>
+        {% endfor %}
+        
+
+    </div>
+    <script>
+        function copyCtfLink(port, path) {
+          // Get the current URL of the page
+          var currentUrl = window.location.href;
+        
+          // Construct the URL of the CTF based on the current URL, port, and path
+          var ctfUrl = currentUrl.replace(/:\d+/, ':' + port).replace(/\/ctf\/?$/, '/ctf' + path);
+        
+          // Copy the CTF URL to the clipboard
+          navigator.clipboard.writeText(ctfUrl)
+            .then(() => {
+              alert('CTF link copied to clipboard!');
+            })
+            .catch((error) => {
+              console.error('Failed to copy text: ', error);
+            });
+        }
+    </script>
+{% endblock %}

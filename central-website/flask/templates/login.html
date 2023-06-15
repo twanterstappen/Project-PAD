@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <h2 style="color: #86c232;">Login</h2><br><br>
+    <div class="f-register">
+        <form method="post">
+            <p class="f-r"><i>Required fields are marked with an asterisk (*)</i></p>
+            <div class="">
+            <label class="" for="email">Email<p style="color:red; display:inline;">*</p></label>
+            <input class="" name="email" type="text" id="email" required/>
+            </div>
+            <div class="">
+                <label class="" for="password">Password<p style="color:red; display:inline;">*</p></label>
+                <input class="" name="password" type="password" id="password" required/>
+            </div>
+            <input type="checkbox" name="remember" value="remembermonth"> remember for 31 days
+            <br>
+            <input type="checkbox" required> Accepting <a href="/terms-of-service">terms of service</a><p style="color:red; display:inline;">*</p>
+            <label>
+                <input type="submit" value="Login">
+            </label>
+        </form>
+    </div>
+
+{% endblock %}
+
+

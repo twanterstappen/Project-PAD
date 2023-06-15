@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}email-viewer{% endblock %}
+{% block content %}
+<html>
+<head>
+  <title>Account Details</title>
+
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="/ctf/impersonation1/email-viewer">Back to Email Viewer</a>
+  </div>
+
+  <h1>Account Details</h1>
+
+  <div class="account-info-box">
+    <div>
+      <label for="first-name">Your Email:</label>
+      <input type="text" id="email" value="jonathan.K@mail.com" readonly>
+
+      <label for="first-name">First name:</label>
+      <input type="text" id="first-name" value="Jonathan" readonly>
+
+      <label for="first-name">Last name:</label>
+      <input type="text" id="last-name" value="Karenman" readonly>
+    </div>
+    <div>
+
+</body>
+</html>
+{% endblock %}

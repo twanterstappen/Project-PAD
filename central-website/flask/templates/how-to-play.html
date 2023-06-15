@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}How to play{% endblock %}
+
+{% block page_title %}How to play{% endblock %}
+
+
+{% block content %}
+<div class="how-to-play">
+    <p>
+        Welcome to our SQL injection CTF!
+        The objective of this game is to use your knowledge of
+        SQL injection attacks to exploit vulnerabilities in our web application and retrieve sensitive data.
+    </p>
+    <p>
+        Playing a CTF game in the world of hacking is the same
+        as a real life capture the flag game. You capture the flag from
+        your enemy team and bring it back to your side. The same principle goes here.
+        You capture a flag, in this case it wil be a random couple of characters.
+        You will have to try to find it somewhere in the code that is part of our website.
+        After finding a flag you are able to submit this flag, in the case that it is incorrect
+        you will have to try again. If this is not the case and you have successfully found the
+        flag and submitted it this will be registered on the website. By registering on our website
+        you become a CyberCTF member and will be able to keep track of the CTF challenges that you have already
+        completed
+    </p>
+    <br>
+    <h2 style="color: #86c232;">Here's how to play:</h2>
+    <p>
+    <ol style="font-size: 13px;">
+        <li>
+            First, navigate to our web application at <a href="/ctf">our page</a>.
+            You'll be presented with a login form that requires a username and password.
+        </li>
+        <br>
+        <li>
+            Your goal is to use SQL injection techniques to bypass the login form
+            and access the sensitive data stored on our server.
+        </li>
+        <br>
+        <li>
+            To do this, you'll need to enter specially crafted SQL statements into the username and/or password fields.
+            These statements will exploit vulnerabilities in the web application's code and allow you to retrieve data
+            that you shouldn't have access to.
+        </li>
+        <br>
+        <li>
+            As you progress through the levels, the difficulty will increase and the vulnerabilities will become more
+            complex.
+            Some levels may require a combination of techniques to bypass the login form.</li>
+        <li>
+            If you get stuck or need a hint, feel free to ask the organizers for assistance.
+            We're here to help you learn and have fun.
+        </li>
+        <br>
+        <li>
+            Remember to be ethical and responsible with your skills.
+            SQL injection attacks can be used for malicious purposes, and we strongly discourage any such activity.
+            Our goal is to educate and raise awareness about these vulnerabilities, not to encourage harmful behavior.
+        </li>
+    </ol>
+    </p>
+    <h3>Good luck and have fun!</h3>
+</div>
+
+{% endblock %}

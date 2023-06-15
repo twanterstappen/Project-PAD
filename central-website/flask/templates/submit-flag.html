@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Submit Flag{% endblock %}
+
+{% block page_title %}Submit Flag{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <div class="">
+        <label class="" for="flag"><h2 style="color: #86c232;">Submit Flag</h2></label>
+        <input class="I-flag" name="flag" type="text" id="flag" placeholder="Enter here your flag" size="35" required/>
+        </div>
+
+        <label>
+            <input type="submit" value="check">
+        </label>
+    </form>
+
+    {% if g.level_name %}
+        You solved level: <b style="color: green; font-weight: bold;">{{ g.level_name }}</b>
+    {% endif %}
+
+{% endblock %}
+
+

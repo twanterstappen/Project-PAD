@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Hidden Directories{% endblock %}
+
+{% block page_title %}
+    <h1>Hidden Directories</h1>
+    <br>
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="url1">
+        <h2 style="font-size: 30px;">Description</h2>
+        <span class="description">
+            We have several pages hidden. Can you find the one with the flag?
+        </span>
+        <span>
+            The website is running
+            <a href="hidden_directories/index.html" target="_blank">here</a>
+            .
+        </span>
+    </div>
+    <br><br>
+        <div class="hint-box">
+          <a class="button" href="#popup1">Hint 1</a>
+          <div id="popup1" class="overlay">
+            <div class="popup">
+              <h2>Hint 1</h2>
+              <a class="close" href="#">&times;</a>
+              <div class="content-p">
+                <br>
+                folders folders folders &#128193;
+              </div>
+            </div>
+          </div>
+          <a class="button" href="#popup2">Hint 2</a>
+            <div id="popup2" class="overlay">
+              <div class="popup">
+                <h2>Hint 2</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content-p">
+                  <br>
+                  Funtion 12
+                </div>
+              </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

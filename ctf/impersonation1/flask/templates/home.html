@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}email-viewer{% endblock %}
+{% block content %}
+    
+<div class="navbar">
+    <a href="/ctf/impersonation1/sent-emails">Sent-emails</a>
+    <a href="/ctf/impersonation1/account-details">account-details</a>
+
+
+  </div>
+  
+
+  <div class="email-tab" onclick="toggleEmail('email1')">NoReply@mail.com</div>
+  <div id="email1" class="email-content">
+    <h2>Welcome!</h2>
+    <p>Thank you for joining us! please confirm if this is your email adress...</p>
+  </div>
+
+  <div class="email-tab" onclick="toggleEmail('email2')">Philip@mail.com</div>
+  <div id="email2" class="email-content">
+    <h2>Recomendation</h2>
+    <p> Yea you should defo watch star wars, i recomend starting with the original trilogy and after that watching the prequel. It makes it more fun imo!</p>
+  </div>
+
+  <div class="email-tab" onclick="toggleEmail('email3')">**************</div>
+  <div id="email3" class="email-content">
+    <h2>Work_encryption</h2>
+    <p>Hi Jonathan, can you review this please? 438h948.py
+      the password is helloworld123.</p>
+  </div>
+<div class="email-tab" onclick="toggleEmail('email4')">**************</div>
+  <div id="email4" class="email-content">
+    <h2>Work_encryption</h2>
+    <p>Can you submit when yoiuve reviewed the file..
+      </label>
+    </p>
+    <button onclick="document.getElementById('popup').style.display = 'block'">"submit"</button>
+      <div id="popup">
+        <input type="text" id="email" value="CyberCTF{WH0_Am_1?}" readonly>
+        <button onclick="document.getElementById('popup').style.display = 'none'">Cancel</button>
+      </div>
+  </div>
+
+  <div class="email-tab" onclick="toggleEmail('email5')">Mother@mail.com</div>
+  <div id="email5" class="email-content">
+    <h2>Grocery</h2>
+    <p>Can you get some milk before you come home, and some dog food fro Scrappy.</p>
+  </div>
+  <script>
+    function toggleEmail(emailId) {
+      var emailContent = document.getElementById(emailId);
+      emailContent.style.display = (emailContent.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function addDiv() {
+      var content = document.getElementById('divContent').value;
+      var newDiv = document.createElement('div');
+      newDiv.innerHTML = content;
+      document.body.appendChild(newDiv);
+      document.getElementById('popup').style.display = 'none';
+    }
+    
+  </script>
+{% endblock %}
